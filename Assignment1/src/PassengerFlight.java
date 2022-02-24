@@ -78,6 +78,7 @@ public class PassengerFlight implements Flight{
         sb.append(String.format("%-20s %s%n", "Destination", getDestination()));
         sb.append(String.format("%-20s %s%n", "FLight Number", getFlightNumber()));
         sb.append(String.format("%-20s %s%n", "Departure Time", getDepartureTime()));
+        sb.append(String.format("%-20s %s%n", "Passenger Capacity", getPassengerCapacity()));
         return sb.toString();
     }
 
