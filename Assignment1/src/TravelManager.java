@@ -23,8 +23,8 @@ public class TravelManager {
             String flightNumber2 = FlightManager.getInstance().createFlight("passengerFlight", airliner, airportOrigin, airportDestination, passengerCapacity);
             Optional<Flight> flight1 = FlightManager.getInstance().getFlightByFlightNumber(flightNumber2);
 
-            System.out.println(flight.get());
-            System.out.println(flight1.get());
+            System.out.println("Commercial Flight\n"+ flight.get());
+            System.out.println("Passenger Flight\n" + flight1.get());
         } catch (BadParameterException e) {
             e.printStackTrace();
         }
