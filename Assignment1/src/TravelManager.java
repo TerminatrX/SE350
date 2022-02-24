@@ -15,12 +15,12 @@ public class TravelManager {
             Airport airportOrigin = AirportFactory.getAirport("ORD");
             Airport airportDestination = AirportFactory.getAirport("JFK");
             Date date = new Date();
-            int passengerCapacity = 0;
+            int passengerCapacity = 10;
             //CommercialFlight flight = new CommercialFlight(airliner, airportOrigin, airportDestination, "78de", date);
             String flightNumber = FlightManager.getInstance().createFlight("commercialFlight", airliner, airportOrigin, airportDestination);
             Optional<Flight> flight = FlightManager.getInstance().getFlightByFlightNumber(flightNumber);
 
-            String flightNumber2 = FlightManager.getInstance().createFlight("passengerFlight", airliner, airportOrigin, airportDestination, 10 );
+            String flightNumber2 = FlightManager.getInstance().createFlight("passengerFlight", airliner, airportOrigin, airportDestination, passengerCapacity);
             Optional<Flight> flight1 = FlightManager.getInstance().getFlightByFlightNumber(flightNumber2);
 
             System.out.println(flight.get());
