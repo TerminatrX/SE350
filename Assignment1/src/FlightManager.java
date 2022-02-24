@@ -19,13 +19,19 @@ public final class FlightManager {
         flights = new ArrayList<Flight>();
     }
 
-    public String createFlight(String type, Airline airline, Airport origin, Airport destination) {
-        Flight flight = FlightFactory.createFlight(type, airline, origin, destination);
+    public String createFlight(String type, Airline airline, Airport origin, Airport destination, int passengerCapacity) {
+        Flight flight = FlightFactory.createFlight(type, airline, origin, destination, passengerCapacity);
         flights.add(flight);
 
         return flight.getFlightNumber();
     }
 
+    public String createFlight(String type, Airline airline, Airport origin, Airport destination){
+        Flight flight = FlightFactory.createFlight(type, airline, origin, destination);
+        flights.add(flight);
+
+        return flight.getFlightNumber();
+    }
     public Optional<Flight> getFlightByFlightNumber(String flightNumber) {
         return flights.stream()
                 .filter(flt -> flt.getFlightNumber().equals(flightNumber))

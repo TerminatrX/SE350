@@ -5,21 +5,23 @@ import java.util.Objects;
 import java.util.UUID;
 
 
-public class CommercialFlight implements Flight{
+public class PassengerFlight implements Flight{
 
+    private int passengerCapacity;
     private Airline airlineName;
     private Airport origin;
     private Airport destination;
     private UUID flightNumber;
     private Date departureTime;
 
-    public CommercialFlight(Airline name, Airport origin, Airport destination) throws NullParameterException {
+    public PassengerFlight(Airline name, Airport origin, Airport destination, int passengerCapacity) throws NullParameterException {
         setAirlineName(name);
         setOrigin(origin);
-        setDestination(destination);
+        setDestination(destination );
         setFlightNumber();
         setDepartureTime();
     }
+
 
     public Airline getAirlineName(){
         return airlineName;
@@ -41,6 +43,10 @@ public class CommercialFlight implements Flight{
         return departureTime;
     }
 
+    public Integer getPassengerCapacity () {
+        return this.passengerCapacity;
+    }
+
     private void setAirlineName (Airline aName){
         airlineName = aName;
     }
@@ -59,6 +65,10 @@ public class CommercialFlight implements Flight{
 
     private void setDepartureTime () {
         departureTime = new Date(2022, 01, 01, 14, 00);
+    }
+
+    private void setPassengerCapacity(Integer passengerCapacity){
+        this.passengerCapacity = passengerCapacity;
     }
 
     public String toString(){
